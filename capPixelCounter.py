@@ -41,27 +41,30 @@ def main():
     while True:
         # Take a picture using the webcam
         img = take_picture()
+        
         # Preprocess the image
         preprocessed_img = preprocess_image(img)
+        
         # Generate adaptive threshold
         adaptive_thresh_img = adaptive_threshold(preprocessed_img)
+        
         # Count bright pixels using adaptive threshold
         count = count_bright_pixels(preprocessed_img, np.mean(np.array(adaptive_thresh_img)))
-
+        
         # Calculate total number of pixels in the image
         total_pixels = preprocessed_img.width * preprocessed_img.height
-
+        
         # Calculate percentage of white pixels
         white_pixel_percentage = count / total_pixels
-
+        
         # Calculate brightness level based on white pixel percentage
         brightness = int(white_pixel_percentage * 255)
-
+        
         # Reduce brightness by a fixed amount
         reduction_amount = 40  # You can adjust this value as needed
         adjusted_brightness = max(min(brightness - reduction_amount, 255), 0)
-
-        # Set the adjusted brightness (pseudo code)
+        
+        # Set the adjusted brightness
         set_brightness(adjusted_brightness)
 
         print("Brightness adjusted to:", adjusted_brightness)
@@ -72,7 +75,7 @@ def main():
         # Wait for 30 seconds before capturing the next image
         time.sleep(30)
 
-# Function to set brightness (You need to implement this based on your system)
+# Function to set brightness
 def set_brightness(brightness):
     # Ensure brightness is between 0 and 100
     brightness = max(min(brightness, 100), 0)
@@ -82,7 +85,7 @@ def set_brightness(brightness):
 # Function to save the processed image
 def save_processed_image(image):
     # Specify the file path to save the processed image
-    file_path = r"C:\Users\Nen\capalgoidea\processedimage\processed_image.jpg"
+    file_path = r"C:\Users\SampleFilePath"
     # Save the image
     image.save(file_path)
 
