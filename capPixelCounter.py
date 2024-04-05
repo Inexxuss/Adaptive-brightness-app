@@ -1,7 +1,6 @@
 import cv2
 from PIL import Image, ImageEnhance, ImageOps
 import numpy as np
-import numpy as np
 import subprocess
 import os
 import time
