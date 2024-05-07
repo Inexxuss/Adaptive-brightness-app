@@ -1,4 +1,4 @@
-#  Adaptive-brightness-app
+#  Adaptive-brightness-app V 1.0
 
 ## Overview
 This script dynamically adjusts the brightness of your display based on the content captured from your webcam. It uses OpenCV to capture images from the webcam and the Pillow library to process these images. The brightness of the display is adjusted to optimize visibility according to the ambient lighting conditions detected in the webcam feed.
